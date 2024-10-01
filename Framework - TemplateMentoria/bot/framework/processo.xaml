@@ -1,0 +1,428 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="processo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_dicConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_qiTransacao" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>848.8,4293.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="O workflow &quot;processo&quot; é o componente central de uma automação de processo. Sua função principal é executar a automação propriamente dita, seguindo as etapas definidas no fluxo de trabalho e processando as informações necessárias para concluir a tarefa automatizada." DisplayName="Processo" sap:VirtualizedContainerService.HintSize="540.8,5073.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_User" />
+      <Variable x:TypeArguments="ss:SecureString" Name="str_Password" />
+      <Variable x:TypeArguments="x:String" Name="str_Data" />
+      <Variable x:TypeArguments="x:String" Name="str_Nome" />
+      <Variable x:TypeArguments="x:String" Name="str_Valor" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Info" />
+      <Variable x:TypeArguments="sd:DataRow" Name="dtR_NewRow" />
+      <Variable x:TypeArguments="x:String" Name="str_DataLancamento" />
+      <Variable x:TypeArguments="s:String[]" Name="arStr_SepararExtensao" />
+      <Variable x:TypeArguments="s:String[]" Name="arStr_AnoMes" />
+      <Variable x:TypeArguments="x:String" Name="str_Mes" />
+      <Variable x:TypeArguments="x:String" Name="str_Ano" />
+      <Variable x:TypeArguments="x:String" Name="str_Assunto" />
+      <Variable x:TypeArguments="x:String" Name="str_ExcelAttachment" />
+      <Variable x:TypeArguments="x:String" Name="str_Table" />
+      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="str_Teste" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Item da fila" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Iniciando transação: &quot;+in_qiTransacao.Reference]" />
+    <ui:LogMessage DisplayName="Log Message Buscando Credenciais" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Buscando credenciais para enviar o E-mail com o anexo.&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Pega as informações contidas no Asset que está sendo referenciado no arquivo Config.xlsx" AssetName="[in_dicConfig(&quot;OutLook&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential Para Enviar E-mail" sap:VirtualizedContainerService.HintSize="478.4,227.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_Password]" Username="[str_User]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotCredential>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Fazendo uso da função Split, a referencia do item foi separado para que possa ser feito usos variados com o resultado." DisplayName="Multiple Assign Desconstruindo e construindo Strings para Multiusos" sap:VirtualizedContainerService.HintSize="478.4,316.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[arStr_SepararExtensao]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Split(in_qiTransacao.Reference, ".")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[arStr_AnoMes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Split(arStr_SepararExtensao(0), "_")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Mes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[arStr_AnoMes(2)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Ano]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[arStr_AnoMes(3)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Assunto]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">["Relatório de Faturas [" + str_Mes + "/" + str_Ano + "]"]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_ExcelAttachment]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[arStr_SepararExtensao(0) + ".xls"]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="As informações contidas no item da lista estão sendo distribuídas em variáveis para facilitar seu uso. " DisplayName="Multiple Assign Passando Valores do Item da Fila Para Variáveis" sap:VirtualizedContainerService.HintSize="478.4,254.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Data]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_qiTransacao.SpecificContent("Data da Fatura").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Nome]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_qiTransacao.SpecificContent("Nome do Fornecedor").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Valor]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_qiTransacao.SpecificContent("Total").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_DataLancamento]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Now.ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Log Message Abrindo Chrome" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Abrindo a página de cadastro.&quot;]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Abrindo o Cadastro para poder preencher seus campos." AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Cadastramento de Faturas" sap:VirtualizedContainerService.HintSize="478.4,1660.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="97df8637-4433-45ec-8e9e-dc95dfee26a4" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Casando as variáveis pré-setadas em seus devidos campos" sap:VirtualizedContainerService.HintSize="416,1412.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message Preenchendo Campos" sap:VirtualizedContainerService.HintSize="353.6,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Preenchendo campos do cadastro.&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Valor Total" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="97df8637-4433-45ec-8e9e-dc95dfee26a4" Text="[str_Valor]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" CvTextArgument="Insira sua resposta" CvType="Text" DesignTimeRectangle="525, 493, 913, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='' class='-au-68' aaname='' /&gt;" Guid="2f013d8b-cbe7-44b5-9ff8-b014826e7451" ImageBase64="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" InformativeScreenshot="b16c88313ba2d5e566c433a68f087441.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Valor total" CvType="Text" DesignTimeRectangle="524, 408, 96, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Valor total' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Valor total' tag='SPAN' type='' class='text-format-content ' check:innerText='Valor total' /&gt;" Guid="81d300d8-7997-4846-948d-faa1c9a04aa0" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Data de lançamento da fatura" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="97df8637-4433-45ec-8e9e-dc95dfee26a4" Text="[str_DataLancamento]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" CvElementArea="520, 612, 920, 49" CvTextArea="540, 629, 162, 22" CvTextArgument="Insira sua resposta" CvType="InputBox" DesignTimeRectangle="525, 617, 913, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rdd3ed805c58d4d999c7aa5e457d806ba QuestionInfo_rdd3ed*' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rdd3ed805c58d4d999c7aa5e457d806ba QuestionInfo_rdd3ed*' tag='INPUT' type='' class='-au-68' aaname='' /&gt;" Guid="0f91c434-6302-4252-a425-7b99227546ff" ImageBase64="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" InformativeScreenshot="fe21f2ab9d9b44e48dcab962100dffc7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Data de Lancamento *" CvType="Text" DesignTimeRectangle="524, 532, 194, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Data de Lancamento' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Data de Lancamento' tag='SPAN' type='' class='text-format-content ' check:innerText='Data de Lancamento' /&gt;" Guid="dc79f632-70d4-45dc-93fd-63f9736906b9" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Fornecedor" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="97df8637-4433-45ec-8e9e-dc95dfee26a4" Text="[str_Nome]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" CvElementArea="519, 795, 921, 48" CvTextArea="540, 811, 162, 22" CvTextArgument="Insira sua resposta" CvType="InputBox" DesignTimeRectangle="525, 799, 913, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rb2e3f70cc964424ba6442c1741c4267d QuestionInfo_rb2e3f*' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rb2e3f70cc964424ba6442c1741c4267d QuestionInfo_rb2e3f*' tag='INPUT' type='' class='-au-68' aaname='' /&gt;" Guid="b2d161f9-3b63-4e9e-92fa-d15bf6e3a6da" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA5UAAAAuCAYAAAC4TT34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAmHSURBVHhe7d3/Z2PZH8fx+dvy06WEEsplCSUM0R8aQ6NsLY1lokyEifkhyshQWSrzS8rIsvpDZRjpDyOUMh/1KaFkp5/NZztTW/Pec+499+bke9JJsv3083xwnMnNzT33S3/Y177vuffJp3//LjQajUaj0Wg0Go1Go92nPfnX5Wf1j89CT09PT09PT09PT09PTz9r/0T/w0+Yfn/V/lO+fP1Lvn0TAAAAAAC8fKhzos6Ldn7UvVepDNr1H1/NTwAAAAAAGPSfztf+SqV/H+xV+79mFQAAAAAARtP5MciS4ZxKXcoEAAAAAGASnR8HKpXMoQQAAAAATEPnx55KpW4AAAAAAExroFIJAAAAAMC0eiqVOmECAAAAADAtq1Lpv18EAAAAAIBp+ZVK6z2VAAAAAABMizmVAAAAAIB7C7IkcyoBAAAAADOjUgkAAAAAuLeeSiVzKgEAAAAAs/jfrFTeNaXoOuI8q0rLLAIAAAAALF9PpXI+cypbUklGJJKsLC7w3TSkQKgEAAAAgH+cVamc13sqlxAq8X+hc1qS9HpBGuYzAAAAgIfHr1TO9T2VhErMR+swKZFIjlAJAAAAPGALmFNJqMR8ECoBAACAhy/IkgueU2mWvVDx4PpcKrtxiTrqc8SR2GZRGtdmtVBHzo+yknKj4kSC9QrWetb2Qg3JqXWThy1pvy9IctVRv0tKJdgJNW51LyWut1z9diUmqZd1ad+Z78e5a0t9Py2JmPmtE5X4dlUuzNfSqkhSLc99MJ8to4JR66Qo6aex8Pii6xmpnHXMt+NMOE6l/V5te92cO29fi1K/Ml8GJh2TNY5c1aW4bV+zrFSH7evd4HWLuinJHp2rK9pn3PjmfHrL7WZd785ZVbKbrtmniDixlBTet823AAAAAJZlSZVKs+zHnORcV3YOalI/qUvtYEdiOiysl60wI9J8FVMho7te/UiFpHjKCk6jQ2ViSwWVn2vS6gmL/vqOm5bikdqe2mY1n/CCTyzfkFuz1nBtqW2p4LOSkIL5be0wq8KcFRRnDZUfcmqZI4m9itT08f1alp01dTxObzgcbtxx+uM5etvPrW27av+dtNTCzDXFMZlxkvsV75ql96vhtUgF+3ppVtXu1Dl+pgOidVwnVSluuf55VteqGywnjH/TkoZaVt1z1fZSUvK2pdq5OQDvfDvibhWlasbJJfTYMcmdjr+aAAAAAOarp1K5uDmVZpn+j/4PvTWri9dxtTwqhaZZoMOMrj49r5vPhg5PYYAaHSojqwVpDlQfWyrAHvdVJTtS+1HvU1bqA+tbrvzAmPilL+3Zv5k1VJ5WpNRf6TsrijtsnAFjjtPsR7J/G526ZFcjEn1lTvI0xxSME0lK2Q6PWudYMvoabdXCoOgf5+D11fygq67xR7NgqvFHnDutVZPyb31VyU5NdvT+9v/dAAAAAFio5VYqE2VrmdEsSFSFgex781kupLyu1l3LSX3gttjAmFA5Q6jwQ8uE6uCNH6CcjbJcjAqfs4bKocz+9xzTMKOP8+K1ruxl5PjGLLDUn6vfBNdkmmMKxtk9HlrJbb6KqrGCQH4hpR/Uus+qMvQG1Du1LT1e3hzbVOPPcu60YX93AAAAABatp1K5lDmV/YLqmp67Z3Q+FiWxotaPON58wFpw22NodKgcWem7a8v5SUWK+aykn7rihvP+Jt9y2nq3I66uzDlRSe5VpHHZF7PuESpvL5tSfZOT3G5K3B9ciXnH239Mw4w+zsYLs42RrbsfE49pwvnsDeT+uu5r+yZmm7leG5UwdE4ef/S587TPpX5YlNxeWhLq/IVzZQmVAAAAwFJZlcpFvqdytlDpUSGweVSQdNwPC84ztb2wqjU6VA5sR7usSEqHNv1wnl0V5N748wNr+YQVjCa4bUn9TcY8GMcRN2/NEZwpVHakkdfzDB2Jrqclmy9K5de61E/L/u2bU4bKYcfphcq1rFSCOYgD7by3kjjumMadT8U/rrTUvGry7KHSM3b8YefO13qb8v6HgH44Tyafk5I3L7MmuYQag1AJAAAALJVfqVz4eyrvESotrXcZ7xbZ7jqzhcrGCxVaVrNS75vu1/plhlAZ0E843ddhx+mGyOAY3g7e/OmNbQejYN2B+YR1yarl3xMq/VtSh9/+OtawYzLjOEP351aOd9W+6nmd3ufpbn8N53T2Gzq+OlXDQmWwref1ngCq/ybKhEoAAABg6ZY7p3LaUNk/z84Erm4omSVUtqWyodbtn895p4KQnrs5KVTqfenfn8uyJNRY6Xcm1ug5gjqA7R73Bp3ggTZ2MDrNeVW27hxSX+e3jH877neESvnoz08dCKz9pjkmM07EyZhqpOVTSeLqu5gVEi8O9AOXxj2oJ9Z9GNNU4/u/866P/TqUUQ/5MftEqAQAAACWK8iSD2hOpQozK/HuKyxOalL+Sd8uGpfSJ7PK0O2NDlt+4Ol/zYYr6a0pKpV6/1aTkj00rzc5qUrhqeOFreMw/9xKIx/zxnB/KvtjeK/eiEtmV49hhUrzkJrIWqr7epOXCYlupSWlQ9H3hEp9a+0Lsx/h6zb0vpQkux2Xgl1ZnXhM/jjuRlJi9qs/DsxcyDV1THZ+1K8U2fBvYx18pYjTu79Tja988AN47OeKWqcmxbf63JgHOTmJ8PfePrlpSVOpBAAAAJbuAVYqW3K8l+o+eMWJirtZkNqFnTZmC5Xei/ZfpsKH4TjxtJROO91K2LgUctOU8nai+yCdlZgkdsvSsKtn2sAYGamcBWP03sLZOatIZt08KMh7UE1NLvRtnfrzd4VKRd9KepSVVMycPxXoom5ChXQ1RnAKpzqm7jid01I4t9Wbl7pXlXP7cgTUOWgcZCRhjR3bzErltO+m2GnPqQrJzf2kRL1qryPxN+f+4qu6FDZj/vnTy7dL0rge9ncHAAAAYNF6KpXzmVOJx2FCeAUAAAAAZQGVSjwOhEoAAAAAk/VUKuczpxKPA6ESAAAAwGRWpXJe76nE40CoBAAAADCZX6mc63sq8TgQKgEAAABMxpxKAAAAAMC9BVmSOZUAAAAAgJlRqQQAAAAA3FtPpVK3b9/MNwAAAAAAjKHz40Cl8svXv8zXAAAAAACMpvNjT6VSJ8yr3/80XwMAAAAAMJrOj1al0n9Ppe6v//hiVgEAAAAAYJDOjXaODOdU2hVLXcpkjiUAAAAAQNP5UOdEnRft/Kj7cE4ljUaj0Wg0Go1Go9Fos7ZwTiU9PT09PT09PT09PT09/Wz9Z/kb0WORnLgepAIAAAAASUVORK5CYII=" InformativeScreenshot="b5bc312417b1fcaf8a7caca5406fb4bc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Fornecedor" CvType="Text" DesignTimeRectangle="524, 746, 107, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Fornecedor' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fornecedor' tag='SPAN' type='' class='text-format-content ' check:innerText='Fornecedor' /&gt;" Guid="dd8f4291-260c-40cd-a716-63ead1b35d2b" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Data da Fatura" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="97df8637-4433-45ec-8e9e-dc95dfee26a4" Text="[str_Data]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" CvTextArgument="Insira sua resposta" CvType="Text" DesignTimeRectangle="525, 888, 913, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rf3c5cec0b9014ba482ef5363d6808c5e QuestionInfo_rf3c5c*' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='QuestionId_rf3c5cec0b9014ba482ef5363d6808c5e QuestionInfo_rf3c5c*' tag='INPUT' type='' class='-au-68' aaname='' /&gt;" Guid="6249dcfb-a24f-459c-b7a4-cb701d3ecc6f" ImageBase64="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" InformativeScreenshot="6a93a6d6175893b6ac3ad72417ec5649.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Data da Fatura" CvType="Text" DesignTimeRectangle="524, 803, 137, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Data da Fatura' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Data da Fatura' tag='SPAN' type='' class='text-format-content ' check:innerText='Data da Fatura' /&gt;" Guid="f198f466-1adc-431e-bcea-c1d21f650d44" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Botão Enviar" sap:VirtualizedContainerService.HintSize="353.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="97df8637-4433-45ec-8e9e-dc95dfee26a4" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" CvElementArea="520, 882, 921, 48" CvTextArea="539, 896, 163, 23" CvTextArgument="Insira sua resposta" CvType="InputBox" DesignTimeRectangle="500, 874, 108, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl class='css-183' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='css-183' tag='BUTTON' type='' aaname='Enviar' check:innerText='Enviar' /&gt;" Guid="aeffa92d-de7a-4565-b2b4-51bd6ff3d9ca" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAA2CAYAAAAf4R06AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPqSURBVHhe7ZxBSxtBFMd78dTPkY9QkNKzx5689uCl9hQ8lN4qFKsX0YqiYKEevKwNAQPSHITa1oBSULQICQjpCobEwtIFhUhI4HVmZ9/sZjK2jUgzj76FH+vOvhklP//zNjnk3vfzEPxaCHymeRYCf4oLRN7ga0rXOoHIorcLD8fewP1Hz2FoeIJxAOlCOlnc2I2k3ZjA8en31gUYd5CO0s50AmXybBMY90gnMU5gGEXUVsy4h3SF3nQCuefRQbqSzrp6oK2QcRf0phNoK2LcxeiBnEBqKG+pHmgrYtyFE0gc9MYJJIqRQBZIDfTGCSSKdMY9kDDojRNIFKMHcgKpobxxDyQLJ5A46O3/TOBYHlZyeXhgu0cEI4GDFbh2BjccTdhZsM+5PetQDNTq4de85T4N0JsTCdQCO224bqYJoDhnn3N7lmGt2ha/rA2VwrLlPg2kM2d6IAoMDwrW+0wv6M2pBLLAv8foge4nEGsqW7MwuRdA2FHXcCW22aUpUZP0tkZpvXv+Ox+u5Y2mD5Nda2HNLGSLPvih3Frjo9ME/+ATPNbrFGDnSt4QfXkpD5tnqjZZ49+ivLnWA83j6hReGDVh2ARoXUKlegGNlhqDVg3mRydgZDs2GJThSWr9mRP1Yjf2NrrWSl78fajIgTCI1q1Uk3+QRknNSQusnIm/IT4GJ9DBBPY8xNTLkDVrpFQhK5o7WoKj+IU+8sR19hD86CqAzWxcM7wN+9HrfQnFV2qsV2AB5r11yEQ/KzIYZ/3PgALF0RLrz83q2kGA3sj0QKzxP6afHKfAO1fjSsYUrJyqa12H2+f5IYwYa6XTk3m5Dd5BDSr1ZvTPow+9CyQCMcmDxEggHYHmlmWOZ3I1NVD/FgnD7fMoJ/vkDXOWTiFUQxD+EFvocRm8k0s10CNQ9kA1b5CgN3IJ/JPAZMsMwMvGP3dqsILbbs+cZdisq+vG51VdM7R1oQZtAu/8w4X+kc6c64F3I3ACJo/jJ8STWrR9Xh9/+M2cZGv0i5jSVVETb6OOCkRvTiWw95OYNvgl9XFXPwKH3sZ9L3rAEQ8vr1P3LHPmy7Es+dZBPoUG4ne3XBfoYAJtB6ayL4HDG/o9oXyKfJqqt84ZLUBRPLzgEVYPxftCt7dQ5c2RHsj0j1MJZPoHvXECiWIkkAVSA71xAokinXEPJAx64wQSxeiBnEBqKG/cA8nCCSQOeuMEEsVIIAukBnrjBBJFOuvqgfxFP3SQrtCbTiB/1RYd1FdtGQlc9L5Yixn3kK6Ut1QPlDybyVknMO4wPp2LXPUkMJ1EGVHuie4gXUgnSfISdAL5TPMcJ1AO8JneOYRff+kWndXUm2kAAAAASUVORK5CYII=" InformativeScreenshot="0ea8ace5a5af0637930706bab35f3da2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Nunca forneca sua senha." CvType="Text" DesignTimeRectangle="500, 949, 963, 21" FullSelectorArgument="&lt;webctrl class='-a-190' parentid='form-main-content1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='-a-190' parentid='form-main-content1' tag='DIV' type='' aaname='Nunca forneça sua senha.' check:innerText='Nunca forneça sua senha.Relatar abuso' /&gt;" Guid="9679ef39-c8a7-49ed-b92b-f52dc7b1f4ff" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADjSURBVDhPY4AB82MXBID4PRD/JwG/h2qHG4BN0X/Tw2f/Ky5b+19q9kIwBrFBYiA5qHYIQNcIwyAN/C2d/5lzCsAYxAaJgeQYmJvb3wPxf3yYpRWhGYZBLjE+eApsAFZN6JjR0gbDAJgL4IoOPHj4Hxk4LVoKl2N3coFrRvcCigGNBw/D+chYMDgMeyAiKwIZADME3SDp5AywBnSMYcCDDx/gBiHLMZpZoIQBDBPtBYoN4PUNgIcBCGM1AB/GZwDBhMRc14TbAGQA8icuLFJSSdgAmCApGKoVAoAC79EV4McF7wGS5hcjN4jnVwAAAABJRU5ErkJggg==" InformativeScreenshot="dfaf76b7cb3a6989c16b8d1cd7ff9914.jpg" Selector="&lt;html app='chrome.exe' title='Cadastramento de Faturas' /&gt;" Title="Cadastramento de Faturas" Url="https://forms.office.com/pages/responsepage.aspx?id=2Zn0JZ2aiUK6ROfRxTWLYUlGNI5uA6FHiIlpCd_pOp1UQzlZNk5KMk00SVdNNjk2VE03R0gyN0MwSi4u" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message Criando Data Table" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Criando DataTable para armazenar dados do cadastro.&quot;]" />
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Criando uma tabela para armazenar os dados e enviar os mesmo para uma planilha no Excel." DataTable="[dt_Info]" DisplayName="Build Data Table para passar para o Excel" sap:VirtualizedContainerService.HintSize="478.4,104" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Nome_x0020_do_x0020_Fornecedor&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Data_x0020_da_x0020_Fatura&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;30&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Valor_x0020_Total&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;20&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Data_x0020_de_x0020_Lançamento&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;30&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nome_x0020_do_x0020_Fornecedor /&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BuildDataTable>
+    <Assign DisplayName="Assign Nova linha para a Tabela criada previamente" sap:VirtualizedContainerService.HintSize="478.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataRow">[dtR_NewRow]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataRow">[dt_Info.NewRow]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message Passando dados para a DataRow" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Passando dados para a DataRow.&quot;]" />
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Guardando o valor das variáveis que contém os dados do Item da fila dentro de sua respectiva coluna na tabela.&#xA;" DisplayName="Multiple Assign Dados do cadastro sendo passados para a DataRow" sap:VirtualizedContainerService.HintSize="478.4,270.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dtR_NewRow("Nome do Fornecedor")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[str_Nome]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dtR_NewRow("Data da Fatura")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[str_Data]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dtR_NewRow("Valor Total")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[str_Valor]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[dtR_NewRow("Data de Lançamento")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">[str_DataLancamento]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Log Message Adicionando DataRow a DataTable" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Adicionando Row a DataTable.&quot;]" />
+    <ui:AddDataRow ArrayRow="{x:Null}" sap2010:Annotation.AnnotationText="Adicionando linha criada a tabela." DataRow="[dtR_NewRow]" DataTable="[dt_Info]" DisplayName="Add Data Row to Data Table" sap:VirtualizedContainerService.HintSize="478.4,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:AddDataRow>
+    <ui:LogMessage DisplayName="Log Message Adicionando Novo Item" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Criando planilha no Excel com os dados da DataTable.&quot;]" />
+    <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Enviando os dados da tabela para uma planilha no Excel, a mesma será criada no ato." DataTable="[dt_Info]" DisplayName="Write Range Workbook Criando Planilha" sap:VirtualizedContainerService.HintSize="478.4,160" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Relatorio" WorkbookPath="[&quot;C:\Users\00051966\Documents\UiPath\Framework - TemplateMentoria\bot\Relatorio/&quot; + str_ExcelAttachment]">
+      <ui:WriteRange.StartingCell>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:WriteRange.StartingCell>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteRange>
+    <ui:LogMessage DisplayName="Log Message Enviando E-mail" sap:VirtualizedContainerService.HintSize="478.4,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Enviando E-mail contendo o anexo &quot; + str_ExcelAttachment + &quot;.&quot;]" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="Enviando planilha do Excel contendo os dados da DataTable para o E-mail/OutLook pré-setado." AttachmentsCollection="[Directory.GetFiles(&quot;C:\Users\00051966\Documents\UiPath\Framework - TemplateMentoria\bot\Relatorio&quot;, str_ExcelAttachment)]" Body="Documento segue em anexo." DisplayName="Send SMTP Mail Message com o Anexo" Email="[str_User]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="478.4,192.8" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Port="[Convert.ToInt32(in_dicConfig(&quot;porta_SMTP&quot;))]" SecureConnection="Auto" SecurePassword="[str_Password]" Server="[in_dicConfig(&quot;servidor_SMTP&quot;).ToString]" Subject="[str_Assunto]" To="[str_User]">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+      </ui:SendMail.Files>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:SendMail>
+  </Sequence>
+</Activity>

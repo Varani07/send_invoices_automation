@@ -1,0 +1,205 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Principal.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "qi_transacao&StateMachine_1",
+        "exc_erroAplicacao&StateMachine_1",
+        "dic_config&StateMachine_1",
+        "bre_excecaoNegocio&StateMachine_1",
+        "di_pastaGeralSharepoint&StateMachine_1",
+        "date_horaInicio&StateMachine_1",
+        "dt_reporter&StateMachine_1",
+        "bol_shouldStop&Sequence_41",
+        "str_corpoEmail&Sequence_35"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strTransacaoEspecifica",
+        "in_bolAtivarColetor"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/iniciar-todas-configuracoes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dic_project&Sequence_31",
+        "str_project&Sequence_42",
+        "Jbj_project&Sequence_42",
+        "list_sharepointList&Sequence_24",
+        "str_oDataFiltro&Sequence_24",
+        "drv_area&Sequence_27",
+        "dt_emails&Sequence_27",
+        "dt_funcionalidades&Sequence_27",
+        "dt_parametros&Sequence_27"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dicFuncionalidades",
+        "out_arrEmails",
+        "out_dicParametros",
+        "out_dicConfig",
+        "out_dicOffice365"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/processo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_Teste&Sequence_1",
+        "str_User&Sequence_1",
+        "str_Password&Sequence_1",
+        "str_Data&Sequence_1",
+        "str_Nome&Sequence_1",
+        "str_Valor&Sequence_1",
+        "dt_Info&Sequence_1",
+        "dtR_NewRow&Sequence_1",
+        "str_DataLancamento&Sequence_1",
+        "arStr_SepararExtensao&Sequence_1",
+        "arStr_AnoMes&Sequence_1",
+        "str_Mes&Sequence_1",
+        "str_Ano&Sequence_1",
+        "str_Assunto&Sequence_1",
+        "str_ExcelAttachment&Sequence_1",
+        "str_Table&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_qiTransacao",
+        "in_dicConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/coletor.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_User&Sequence_37",
+        "str_Password&Sequence_37",
+        "mailList_MailMessage&Sequence_37",
+        "str_DataFatura&Sequence_37",
+        "str_NomeFornecedor&Sequence_37",
+        "str_Total&Sequence_37",
+        "List_Emails&Sequence_37"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dicConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/adicionar-status-transacao.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_nomeArqPrint&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dicConfig",
+        "in_qiTransacao",
+        "in_dateHoraInicio",
+        "in_excErroAplicacao",
+        "in_breExcecaoNegocio"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/iniciar-todas-configuracoes-excel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "list_SharepointList&Sequence_2",
+        "str_oDataFiltro&Sequence_2",
+        "dt_PlanilhaConfigEmail&Sequence_2",
+        "dt_PlanilhaConfigFuncionalidades&Sequence_2",
+        "str_repositorio&Sequence_2",
+        "dt_PlanilhaConfigParametros&Sequence_2",
+        "dt_configProcessos&Sequence_2",
+        "dt_configGeral&Sequence_2",
+        "dt_assets&Sequence_2",
+        "str_project&Sequence_4",
+        "Jbj_project&Sequence_4",
+        "dic_project&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dicConfig",
+        "out_diPastaGeralSharepoint",
+        "out_dtReporter"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/leitura-config-area.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "drv_planilha&Sequence_1",
+        "dt_PlanilhaConfigEmail&Sequence_1",
+        "dt_parametros&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_dicConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/switch-pastas-arquivos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bol_pastaExiste&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strUtilidade",
+        "in_bolPasta",
+        "in_strCaminho",
+        "in_strNovoCaminho"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/obter-dados-transacao.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_qiTransacao",
+        "in_strTransacaoEspecifica",
+        "in_dicConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/finalizar-todas-aplicacoes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_arrProcessos"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "framework/iniciar-todas-aplicacoes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_dicConfig"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}
